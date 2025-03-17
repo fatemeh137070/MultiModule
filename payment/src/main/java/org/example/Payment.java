@@ -25,7 +25,6 @@ public class Payment {
             String item = exchange.getRequestURI().getPath().split("/")[2];
             System.out.println("Payment processed for: " + item);
 
-
             String shippingResponse = restTemplate.getForObject("http://localhost:8082/shipping/" + item, String.class);
 
 
