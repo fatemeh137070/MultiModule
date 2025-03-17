@@ -25,10 +25,10 @@ public class Shipping {
             String item = exchange.getRequestURI().getPath().split("/")[2];
             System.out.println("Shipping initiated for: " + item);
 
-            // درخواست به سرویس Notification
+
             String notificationResponse = restTemplate.getForObject("http://localhost:8083/notification/" + item, String.class);
 
-            // پاسخ به کلاینت
+
             String response = "Shipping Done → " + notificationResponse;
             exchange.sendResponseHeaders(200, response.getBytes().length);
             exchange.getResponseBody().write(response.getBytes());

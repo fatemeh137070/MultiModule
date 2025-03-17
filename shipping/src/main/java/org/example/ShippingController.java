@@ -16,7 +16,7 @@ public class ShippingController {
     public String shipOrder(@PathVariable String item) {
         System.out.println("Shipping initiated for: " + item);
         
-        // درخواست به سرویس Notification
+
         String response = restTemplate.getForObject("http://localhost:8083/notification/" + item, String.class);
         
         return "Shipping Done → " + response;

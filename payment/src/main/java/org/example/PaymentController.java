@@ -16,7 +16,7 @@ public class PaymentController {
     public String processPayment(@PathVariable String item) {
         System.out.println("Payment processed for: " + item);
         
-        // درخواست به سرویس Shipping
+
         String response = restTemplate.getForObject("http://localhost:8082/shipping/" + item, String.class);
         
         return "Payment Done → " + response;
